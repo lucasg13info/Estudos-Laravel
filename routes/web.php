@@ -47,3 +47,15 @@ Route::prefix('/app')->group(function() {
     })->name('app.profile');
 });
 
+
+Route::get('/produtos', function () {
+    echo "<h1> Produtos </h1>";
+    echo "<ol>";
+    echo "<li>Notebook</li>";
+    echo "<li>Impressora</li>";
+    echo "<li>Mouse</li>";
+    echo "</ol>";
+})->name('meusprodutos');
+
+//Forçando o redirecionamento para uma rota especifica
+Route::redirect('todosprodutos', 'produtos', 301);
