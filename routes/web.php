@@ -36,14 +36,14 @@ Route::get('/rotacomregras/{nome}/{n}', function($nome, $n){
 Route::prefix('/app')->group(function() {
     Route::get('/', function(){
         return view('app');
-    });
+    })->name('app');
 
     Route::get('/user', function(){
         return view("user");
-    });
+    })->name('app.user');
 
     Route::get('/profile', function(){
         return view('profile');
-    });
+    })->name('app.profile');
 });
 
