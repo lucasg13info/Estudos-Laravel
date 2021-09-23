@@ -26,5 +26,20 @@ Route::get('/ola/{nome}', function($nome){
 Route::get('/rotacomregras/{nome}/{n}', function($nome, $n){
     for($i = 0; $i <$n; $i ++)
         echo "Olá! Seja bem vindo, $nome !<br>";
-})->where('nome', '[A-Za-z]+')
-  ->where ('n', '[0-9]+');
+})->where('nome', '[A-Za-z]+')->where ('n', '[0-9]+');
+
+
+Route::prefix('/app')->group(function() {
+    Route::get('/', function(){
+        return "Meu App";
+    });
+
+    Route::get('/user', function(){
+        return "User";
+    });
+
+    Route::get('/profile', function(){
+        return "Profile";
+    });
+});
+
