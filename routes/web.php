@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -57,5 +59,17 @@ Route::get('/produtos', function () {
     echo "</ol>";
 })->name('meusprodutos');
 
-//Forçando o redirecionamento para uma rota especifica
+//Forçando o redirecionamento para uma rota especifica, forma 1 
 Route::redirect('todosprodutos', 'produtos', 301);
+
+//Forçando o redirecionamento para uma rota especifica, forma 2
+Route::get('todosprodutos2', function() {
+    return redirect()->route('meusprodutos');
+
+});
+
+
+////////////////////////////////////////
+Route::post('/requisicoes', function(Request $request) {
+    return 'Hello POST';
+});
