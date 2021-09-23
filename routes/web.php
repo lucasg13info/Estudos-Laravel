@@ -69,7 +69,34 @@ Route::get('todosprodutos2', function() {
 });
 
 
-////////////////////////////////////////
+////////////////Métodos HTTP////////////////////////
+
+//POST Envia nova requisação
 Route::post('/requisicoes', function(Request $request) {
     return 'Hello POST';
+});
+
+//DELETE Apagar um recurso ex. produto da lista
+Route::delete('/requisicoes', function(Request $request) {
+    return 'Hello DELETE';
+});
+
+//PUT Salvar alguma coisa/ editar
+Route::put('/requisicoes', function(Request $request) {
+    return 'Hello PUT';
+});
+
+//PATCH Salvar alguma coisa/ editar
+Route::patch('/requisicoes', function(Request $request) {
+    return 'Hello PATCH';
+});
+
+//OPTIONS 
+Route::options('/requisicoes', function(Request $request) {
+    return 'Hello OPTIONS';
+});
+
+//GET - Solicita 
+Route::get('/requisicoes', function(Request $request) {
+    return 'Hello GET';
 });
